@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     boolean plus,multi,div,minus;
 
+    Double valueOne,valueTwo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         Listener();
+        Transactions();
 
     }
     public void Listener(){
@@ -81,6 +84,83 @@ public class MainActivity extends AppCompatActivity {
         binding.buttonCom.setOnClickListener(view -> {
             binding.result.setText(binding.result.getText()+",");
             binding.solution.setText(binding.result.getText());
+        });
+    }
+
+    public void Transactions(){
+        binding.buttonPlus.setOnClickListener(view -> {
+            if(binding.result != null){
+
+                valueOne = Double.parseDouble(binding.result.getText()+"");
+                plus = true;
+                binding.result.setText(null);
+
+            }else{
+                binding.result.setText("");
+            }
+        });
+
+        binding.buttonMinus.setOnClickListener(view -> {
+            if(binding.result != null){
+
+                valueOne = Double.parseDouble(binding.result.getText()+"");
+                minus = true;
+                binding.result.setText(null);
+
+            }else{
+                binding.result.setText("");
+            }
+        });
+
+        binding.buttonMulti.setOnClickListener(view -> {
+            if(binding.result != null){
+
+                valueOne = Double.parseDouble(binding.result.getText()+"");
+                multi = true;
+                binding.result.setText(null);
+
+            }else{
+                binding.result.setText("");
+            }
+        });
+
+        binding.buttonDiv.setOnClickListener(view -> {
+            if(binding.result != null){
+
+                valueOne = Double.parseDouble(binding.result.getText()+"");
+                div = true;
+                binding.result.setText(null);
+
+            }else{
+                binding.result.setText("");
+            }
+        });
+
+        binding.buttonEqual.setOnClickListener(view -> {
+           valueTwo = Double.parseDouble(binding.result.getText()+"");
+           if(plus == true){
+               binding.result.setText(valueOne+valueTwo+"");
+               binding.solution.setText(valueOne+"+"+valueTwo);
+               plus=false;
+           }
+
+            if(minus == true){
+                binding.result.setText(valueOne-valueTwo+"");
+                binding.solution.setText(valueOne+"-"+valueTwo);
+                minus=false;
+            }
+
+            if(multi == true){
+                binding.result.setText(valueOne*valueTwo+"");
+                binding.solution.setText(valueOne+"*"+valueTwo);
+                multi=false;
+            }
+
+            if(div == true){
+                binding.result.setText(valueOne/valueTwo+"");
+                binding.solution.setText(valueOne+"/"+valueTwo);
+                div=false;
+            }
         });
     }
 }

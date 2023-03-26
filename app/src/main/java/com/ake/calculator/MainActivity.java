@@ -87,54 +87,58 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void Transactions(){
+    public void Transactions() {
+        //if(binding.result != null){
         binding.buttonPlus.setOnClickListener(view -> {
-            if(binding.result != null){
+            if (binding.result != null) {
 
-                valueOne = Double.parseDouble(binding.result.getText()+"");
+                valueOne = Double.parseDouble(binding.result.getText() + "");
                 plus = true;
                 binding.result.setText(null);
 
-            }else{
+            } else {
                 binding.result.setText("");
             }
         });
 
         binding.buttonMinus.setOnClickListener(view -> {
-            if(binding.result != null){
+            if (binding.result != null) {
 
-                valueOne = Double.parseDouble(binding.result.getText()+"");
+                valueOne = Double.parseDouble(binding.result.getText() + "");
                 minus = true;
                 binding.result.setText(null);
 
-            }else{
+            } else {
                 binding.result.setText("");
             }
         });
 
         binding.buttonMulti.setOnClickListener(view -> {
-            if(binding.result != null){
+            if (binding.result != null) {
 
-                valueOne = Double.parseDouble(binding.result.getText()+"");
+                valueOne = Double.parseDouble(binding.result.getText() + "");
                 multi = true;
                 binding.result.setText(null);
 
-            }else{
+            } else {
                 binding.result.setText("");
             }
         });
 
         binding.buttonDiv.setOnClickListener(view -> {
-            if(binding.result != null){
+            if (binding.result != null) {
 
-                valueOne = Double.parseDouble(binding.result.getText()+"");
+                valueOne = Double.parseDouble(binding.result.getText() + "");
                 div = true;
                 binding.result.setText(null);
-
-            }else{
+            }else {
                 binding.result.setText("");
             }
+
         });
+    /*}else {
+            binding.result.setText("");
+        }*/
 
         binding.buttonEqual.setOnClickListener(view -> {
            valueTwo = Double.parseDouble(binding.result.getText()+"");

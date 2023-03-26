@@ -82,15 +82,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.buttonCom.setOnClickListener(view -> {
-            binding.result.setText(binding.result.getText()+",");
+            binding.result.setText(binding.result.getText()+".");
             binding.solution.setText(binding.result.getText());
         });
     }
 
     public void Transactions() {
-        //if(binding.result != null){
+
         binding.buttonPlus.setOnClickListener(view -> {
-            if (binding.result != null) {
+            if (!binding.result.getText().toString().matches("")) {
 
                 valueOne = Double.parseDouble(binding.result.getText() + "");
                 plus = true;
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.buttonMinus.setOnClickListener(view -> {
-            if (binding.result != null) {
+            if (!binding.result.getText().toString().matches("")) {
 
                 valueOne = Double.parseDouble(binding.result.getText() + "");
                 minus = true;
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.buttonMulti.setOnClickListener(view -> {
-            if (binding.result != null) {
+            if (!binding.result.getText().toString().matches("")) {
 
                 valueOne = Double.parseDouble(binding.result.getText() + "");
                 multi = true;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.buttonDiv.setOnClickListener(view -> {
-            if (binding.result != null) {
+            if (!binding.result.getText().toString().matches("")) {
 
                 valueOne = Double.parseDouble(binding.result.getText() + "");
                 div = true;
@@ -136,9 +136,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-    /*}else {
-            binding.result.setText("");
-        }*/
 
         binding.buttonEqual.setOnClickListener(view -> {
            valueTwo = Double.parseDouble(binding.result.getText()+"");

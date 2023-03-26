@@ -73,5 +73,14 @@ public class MainActivity extends AppCompatActivity {
             binding.result.setText(binding.result.getText()+"0");
             binding.solution.setText(binding.result.getText());
         });
+
+        binding.buttonAC.setOnClickListener(view -> {
+            binding.result.setText("");
+        });
+
+        binding.buttonCom.setOnClickListener(view -> {
+            binding.result.setText(binding.result.getText()+",");
+            binding.solution.setText(binding.result.getText());
+        });
     }
 }
